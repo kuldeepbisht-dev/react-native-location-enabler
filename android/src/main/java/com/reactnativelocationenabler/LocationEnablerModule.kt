@@ -77,11 +77,11 @@ class LocationEnablerModule(reactContext: ReactApplicationContext) : ReactContex
       .setAlwaysShow(alwaysShow)
       .setNeedBle(needBle)
       .addLocationRequest(locationRequest).build()
-    return LocationServices.getSettingsClient(currentActivity!!).checkLocationSettings(build)
+    return LocationServices.getSettingsClient(context.currentActivity!!).checkLocationSettings(build)
   }
 
   private fun checkDeviceLocationSettings(priority: Int, alwaysShow: Boolean, needBle: Boolean) = runBlocking(Dispatchers.Default) {
-    if (currentActivity != null) {
+    if (context.currentActivity != null) {
       val locationSettingsResponseTask = locationSettingsRequestBuilder(priority, alwaysShow, needBle)
       val res = Arguments.createMap()
       locationSettingsResponseTask.addOnFailureListener {
@@ -96,11 +96,11 @@ class LocationEnablerModule(reactContext: ReactApplicationContext) : ReactContex
   }
 
   private fun requestDeviceResolutionLocationSettings(priority: Int, alwaysShow: Boolean, needBle: Boolean) = runBlocking(Dispatchers.Default) {
-    if (currentActivity != null) {
+    if (context.currentActivity != null) {
       val locationSettingsResponseTask = locationSettingsRequestBuilder(priority, alwaysShow, needBle)
       locationSettingsResponseTask.addOnFailureListener { exception ->
         if (exception is ResolvableApiException) try {
-          exception.startResolutionForResult(currentActivity!!, REQUEST_TURN_DEVICE_LOCATION_ON)
+          exception.startResolutionForResult(context.currentActivity!!, REQUEST_TURN_DEVICE_LOCATION_ON)
         } catch (sendEx: IntentSender.SendIntentException) {
           println("requestDeviceResolutionLocationSettings.addOnFailureListener > catch error > " + sendEx.localizedMessage)
         }
