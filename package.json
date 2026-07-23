@@ -44,13 +44,13 @@
     "SettingsClient",
     "resolution"
   ],
-  "repository": "https://github.com/YsnKsy/react-native-location-enabler",
+  "repository": "https://github.com/kuldeepbisht-dev/react-native-location-enabler",
   "author": "Yassine Kassy <y.kassy@me.com> (https://github.com/YsnKsy)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/YsnKsy/react-native-location-enabler/issues"
   },
-  "homepage": "https://github.com/YsnKsy/react-native-location-enabler#readme",
+  "homepage": "https://github.com/kuldeepbisht-dev/react-native-location-enabler#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

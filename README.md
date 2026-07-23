@@ -107,7 +107,7 @@ listener.remove();
 Clone the repo
 
 ```sh
-git clone https://github.com/YsnKsy/react-native-location-enabler.git && cd react-native-location-enabler
+git clone https://github.com/kuldeepbisht-dev/react-native-location-enabler.git && cd react-native-location-enabler
 ```
 
 Install npm dependencies
